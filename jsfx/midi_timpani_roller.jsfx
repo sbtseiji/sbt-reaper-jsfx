@@ -83,6 +83,7 @@ vel < 64 ?(inc = 180):(inc = speed_hi - velocity_diff*inc_rt + rand(speed_rand))
   counter += inc;
   (counter > 1000) ? (
     counter = 0;
+    midisend(ts,8*16,note);
     midisend(ts,9*16,note,vel - velocity_rand + floor(rand(velocity_rand)) );
   );
 );
